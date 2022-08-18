@@ -1,5 +1,8 @@
 #include "BaseGame.h"
 #include <glfw3.h>
+
+#define ENGINE_EXPORT
+
 BaseGame::BaseGame()
 {
 	window = new Window();
