@@ -1,5 +1,7 @@
 #include "BaseGame.h"
+#include <glew.h>
 #include <glfw3.h>
+#include<iostream>
 
 #define ENGINE_EXPORT
 
@@ -19,6 +21,11 @@ int BaseGame::EngineInit(int width, int height, const char* title)
 		return -1;
 	else if (WindowInit(width, height, title))
 		return -1;
+	glewInit();
+	if (glewInit() != GLEW_OK)
+	{
+		std::cout << "error" << std::endl;
+	}
 	return 0;
 }
 
