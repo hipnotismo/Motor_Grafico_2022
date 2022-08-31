@@ -1,6 +1,7 @@
 #ifndef BASEGAME_H
 #define BASEGAME_H
 #include "Renderer.h"
+#include "Window.h"
 struct GLFWmonitor;
 struct GLFWwindow;
 class BaseGame
@@ -16,6 +17,7 @@ public:
 	~BaseGame();
 	int EngineInit(int width, int height, const char* title);
 	int WindowInit(int width, int height, const char* title);
+	void RendererInit();
 
 	bool Running();
 	void UpdateEngine();
