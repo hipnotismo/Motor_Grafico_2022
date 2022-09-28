@@ -1,0 +1,26 @@
+base game possee el engine con el pool event y el imput y deja al juego interactuar con las funciones de todas las otras classes 
+
+Renderer posee el manejo de open gl, la creacion compilado y linkeo de shaders, manipulacion de index y vertex buffers y dibujado, matriz de vista y projeccion
+
+matriz de modelo esta compuesta por M = T (TRANSFORM) . R(ROTACION) . E (ESCALA), EL ORDEN no ES INTERCAMBIABLE MIENTRAS LA CANTIDAD DE COLUMNAS DE LA PRIMERA SEA IGUAL A LAS FILAS DE LA SEGUNDA
+
+3X2 Y 2X5 se puede 2X5 y 3X2 no se puede
+
+Esta compuesto por las transforamcion liniales del modelo. 
+La matriz modelo cambiaria frame por frama
+El modelo esta en entity
+
+La matriz view esta definida en renderer ya qeu la definmos uan vez la moyoria del tiempo durante el principio del engine
+Sprite es clase hermana de shape.
+
+3X2 Y 2X5 SE PUEDE
+ ...   ..
+ ... x ..
+
+2X5 Y 3X2 NO SE PUEDE 
+
+..   ...
+.. X ...
+
+matris vista deermina la direccion y la ubicaion de la camara, matriz de proyeccion determna el tipo de proyerccion (ortogonal o perspectiva)
+
