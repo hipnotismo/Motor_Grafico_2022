@@ -1,0 +1,28 @@
+https://lazyfoo.net/tutorials/OpenGL/14_repeating_textures/index.php
+ 
+private static Vec3 ToEulerAngles(Quat quat)
+        {
+            Vec3 angles;
+
+            float sinr_cosp = 2 * (quat.w * quat.x + quat.y * quat.z);
+            float cosr_cosp = 1 - 2 * (quat.x * quat.x + quat.y * quat.y);
+            angles.x = Mathf.Atan2(sinr_cosp, cosr_cosp);
+
+            float sinp = 2 * (quat.w * quat.y - quat.z * quat.x);
+
+            if (Mathf.Abs(sinp) >= 1)
+            {
+                angles.y = (Mathf.PI / 2) * Mathf.Sign(sinp); 
+            }
+            else
+            {
+                angles.y = Mathf.Asin(sinp);
+            }
+
+            float siny_cosp = 2 * (quat.w * quat.z + quat.x * quat.y);
+            float cosy_cosp = 1 - 2 * (quat.y * quat.y + quat.z * quat.z);
+            angles.z = (float)Mathf.Atan2(siny_cosp, cosy_cosp);
+
+            return angles;
+
+        } //Ok
